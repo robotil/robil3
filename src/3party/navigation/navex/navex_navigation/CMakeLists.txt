@@ -8,6 +8,7 @@ find_package(catkin REQUIRED COMPONENTS
   dynamic_reconfigure
   move_base_msgs
   pcl_ros
+  navex_msgs
 )
 
 find_package(OpenCV REQUIRED COMPONENTS
@@ -28,7 +29,7 @@ catkin_package()
 ###########
 ## Build ##
 ###########
-
+message("catkin_INCLUDE_DIRS ${catkin_INCLUDE_DIRS}")
 include_directories(
   ${catkin_INCLUDE_DIRS}
   include
@@ -54,6 +55,7 @@ add_executable(navex_navigation_node
 )
 
 add_dependencies(navex_navigation_node ${PROJECT_NAME}_gencfg)
+#add_dependencies(navex_navigation_node navex_msgs)
 
 target_link_libraries(navex_navigation_node ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 

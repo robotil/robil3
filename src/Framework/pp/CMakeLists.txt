@@ -4,9 +4,12 @@ project(pp)
 find_package(catkin REQUIRED COMPONENTS
     roscpp rospy
     robil2conf
-    decision_making decision_making_parser
-
-    geometry_msgs nav_msgs tf
+    decision_making 
+    decision_making_parser
+    navex_msgs
+    geometry_msgs 
+    nav_msgs 
+    tf
     tf_geometry
     plpcpp
 )
