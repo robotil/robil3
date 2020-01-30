@@ -7,10 +7,13 @@ The simulation is in:
  
 # Install:
 Branch **master**: 
-1. Clone this repository
-2. Init catkin workspace: catkin init
-3. Compile catkin build
-4. You may need to install python-catkin-tools: https://catkin-tools.readthedocs.io/en/latest/installing.html
+1. Before we clone and compile the new robil3 workspace it is required to clean the environment.
+   Every time we launch the Termimal it is already defined to work in the robil2 environment (as defined in .bashrc file).
+   Remove any source command of robil 2 from the .bashrc file. Now you may proceed.
+2. Clone the repository 
+3. Init catkin workspace: catkin init
+4. Compile catkin build
+5. You may need to install python-catkin-tools: https://catkin-tools.readthedocs.io/en/latest/installing.html
 
 # Run robot
 
@@ -26,4 +29,5 @@ roslaunch robil2conf frameworkUnity.launch
 ## Run OCU
 Open the file: $ROBIL3/src/Framework/ocu/src/RobilOCU.html on a browser.
 Note You have to refresh the OCU each time the robot reboots.
+
 
