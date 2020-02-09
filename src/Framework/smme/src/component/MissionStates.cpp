@@ -139,11 +139,68 @@ FSM(Mission)
 #define MM comp->mission_manager()
 
 bool extend_events_names(Event& e, std::string mid_pref, EventQueue& events){
-#		define EXTEND(NAME) \
-		if(e == Event(NAME)){\
-			std::string ex=mid_pref+NAME;\
-			ROS_INFO("Extend event: "NAME" to %s",ex.c_str());\
-			events.raiseEvent(Event(mid_pref+NAME));\
+	if (e=Event("/StopTask")){
+			std::string ex=mid_pref + "/StopTask";
+			/**ROS_INFO("Extend event: "NAME" to %s",ex.c_str());\**/
+			events.raiseEvent(Event(mid_pref + "/StopTask"));
+			return true;\
+	}
+	if (e=Event("/CompleteTask")){
+			std::string ex=mid_pref + "/CompleteTask";
+			/**ROS_INFO("Extend event: "NAME" to %s",ex.c_str());\**/
+			events.raiseEvent(Event(mid_pref + "/CompleteTask"));
+			return true;\
+	}
+	if (e=Event("/AbortTask")){
+			std::string ex=mid_pref + "/AbortTask";
+			/**ROS_INFO("Extend event: "NAME" to %s",ex.c_str());\**/
+			events.raiseEvent(Event(mid_pref + "/AbortTask"));
+			return true;\
+	}
+	if (e=Event("/PauseTask")){
+			std::string ex=mid_pref + "/PauseTask";
+			/**ROS_INFO("Extend event: "NAME" to %s",ex.c_str());\**/
+			events.raiseEvent(Event(mid_pref + "/PauseTask"));
+			return true;\
+	}
+	if (e=Event("/ResumeTask")){
+			std::string ex=mid_pref + "/ResumeTask";
+			/**ROS_INFO("Extend event: "NAME" to %s",ex.c_str());\**/
+			events.raiseEvent(Event(mid_pref + "/ResumeTask"));
+			return true;\
+	}
+	if (e=Event("/CompleteMission")){
+			std::string ex=mid_pref + "/CompleteMission";
+			/**ROS_INFO("Extend event: "NAME" to %s",ex.c_str());\**/
+			events.raiseEvent(Event(mid_pref + "/CompleteMission"));
+			return true;\
+	}
+	if (e=Event("/PauseMission")){
+			std::string ex=mid_pref + "/PauseMission";
+			/**ROS_INFO("Extend event: "NAME" to %s",ex.c_str());\**/
+			events.raiseEvent(Event(mid_pref + "/PauseMission"));
+			return true;\
+	}
+	if (e=Event("/AbortMission")){
+			std::string ex=mid_pref + "/AbortMission";
+			/**ROS_INFO("Extend event: "NAME" to %s",ex.c_str());\**/
+			events.raiseEvent(Event(mid_pref + "/AbortMission"));
+			return true;\
+	}
+	if (e=Event("/ResumeMission")){
+			std::string ex=mid_pref + "/ResumeMission";
+			/**ROS_INFO("Extend event: "NAME" to %s",ex.c_str());\**/
+			events.raiseEvent(Event(mid_pref + "/ResumeMission"));
+			return true;\
+	}
+#ifdef COMPILE
+#define EXTEND(NAME) \
+		if(Event(#NAME)){\
+
+/**		if(e == Event(#NAME)){\ **/
+			std::string ex=mid_pref + NAME;\
+			/**ROS_INFO("Extend event: "NAME" to %s",ex.c_str());\**/
+			events.raiseEvent(Event(mid_pref + #NAME));\
 			return true;\
 		}
 		//----------- TASK GLOBAL EVENT -------------
@@ -159,6 +216,8 @@ bool extend_events_names(Event& e, std::string mid_pref, EventQueue& events){
 		EXTEND("/ResumeMission")
 		return false;
 #		undef EXTEND
+#endif
+return false;
 }
 
 TaskResult state_MissionUnloaded(string id, const CallContext& context, EventQueue& events){

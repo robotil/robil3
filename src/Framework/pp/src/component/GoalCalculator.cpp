@@ -390,8 +390,8 @@ namespace RobilGC
             
             LCD("if the path is blocked up to the end (accessible_point is not found), search a nearest free point near the last point of the path")
             
-			F_WARN("get_goal") << "Path is blocked up to the end." << endl
-				<< "Am I occupied? " << (map.is_occupied_value(map(robot)) ? "Yes!" : "No!") << endl;
+			//F_WARN("get_goal") << "Path is blocked up to the end." << endl
+			//	<< "Am I occupied? " << (map.is_occupied_value(map(robot)) ? "Yes!" : "No!") << endl;
                 
 			waypoint = path.size() - 1;
             
@@ -643,8 +643,8 @@ namespace RobilGC
 
 		if(path_changed)
 		{
-			F_WARN("GoalCalculator::updatePath") << "Path is changed!" << endl;
-			F_WARN("GoalCalculator::updatePath") << "New path contains " << path_size << " waypoint(s)." << endl;
+		//	F_WARN("GoalCalculator::updatePath") << "Path is changed!" << endl;
+		//	F_WARN("GoalCalculator::updatePath") << "New path contains " << path_size << " waypoint(s)." << endl;
 			_wpi = 0;
 		}
 	}

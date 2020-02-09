@@ -20,6 +20,8 @@
 
 #include <boost/date_time/posix_time/posix_time.hpp>
 
+#include <math.h>
+
 long f_counter=0;
 
 #define CREATE_MAP_FOR_NAV 0
@@ -119,7 +121,7 @@ namespace{
 	long goal_counter =0;
 
 	template<int N> double fround(double x){
-		static const double k = ::pow10(N);
+		static const double k = ::exp10(N);
 		return round(x*k)/k;
 	}
 
@@ -819,7 +821,7 @@ void on_speed(const geometry_msgs::Twist::ConstPtr& msg){
 	};
 
 	SurrealSpeed s(msg->linear.x, msg->angular.z);
-	if(s) F_ERROR("PP - on_speed") << "Surrealistic speed alert: " << s.str() << endl;
+//	if(s) F_ERROR("PP - on_speed") << "Surrealistic speed alert: " << s.str() << endl;
 }
 
 /**
@@ -1124,7 +1126,7 @@ SYNCH
 	robil_msgs::Path goal_path = input_goal_path;
 
 	DBG_INFO("Navigation: Global path gotten. Number of way points is "<<goal_path.waypoints.poses.size()<<" ");
-	F_ERROR("MoveBase::on_path") << "Path gotten." << endl;
+//	F_ERROR("MoveBase::on_path") << "Path gotten." << endl;
 	if(goal_path.waypoints.poses.size()==0) return;
 
 	robil_msgs::Path goal_path_tmp = goal_path;

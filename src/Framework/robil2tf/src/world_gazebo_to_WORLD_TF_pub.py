@@ -10,8 +10,8 @@ pos_x = pos_y = pos_z = 0
 ori_x = ori_y = ori_z = ori_w = 0
 
 def command_calback(msg):
-        global first_read_flag
-	if (first_read_flag == True) :
+	global first_read_flag
+	if (first_read_flag == True):
 	      global pos_x , pos_y , pos_z, ori_x , ori_y , ori_z , ori_w 
 	      names = msg.name
 	      if 'Sahar::IPON::link' in names:
@@ -28,7 +28,7 @@ def command_calback(msg):
 		      		    
 		      first_read_flag = False
 	      else:
-		      print 'Sahar::IPON::link dosn\'t exist in the Gazebo'	
+		      print('Sahar::IPON::link dosn\'t exist in the Gazebo')	
 		
 	br = tf.TransformBroadcaster()
 	br.sendTransform( (pos_x, pos_y, pos_z),
@@ -38,9 +38,10 @@ def command_calback(msg):
                           "world_gazebo")	
 		
 
-rospy.init_node('world_gazebo_to_WORLD_TF_pub')
+	
 
 def main():
+	rospy.init_node('world_gazebo_to_WORLD_TF_pub')
 	rate = rospy.Rate(100)
 	while not rospy.is_shutdown():
 		msg = rospy.wait_for_message("/gazebo/link_states", LinkStates)
