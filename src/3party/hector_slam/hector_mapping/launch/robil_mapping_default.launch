@@ -3,6 +3,7 @@
 <launch> 
   <arg name="base_frame" default="ROBOT_CENTER"/> 
   <arg name="pub_map_odom_transform" default="false"/>
+  <arg name="scan_subscriber_queue_size" default="5"/>
   <arg name="scan_topic" default="/sickldmrs/scan0"/>
   <arg name="map_size" default="2048"/>
   
