@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+        
+        <!--node name="robil2TF_publisher" type="robil2TF_node" pkg="robil2tf" output="screen"  
+    args="ROBOT_CENTER       IBEO                    1.000  0.000  0.000	0.000  0.000  0.000"/-->
+        
+    <!--<node pkg="tf" type="static_transform_publisher" name="base_map_broadcaster" args="1 0 0 0 0 0 map ROBOT_CENTER 100"/>    -->
+    <node pkg="tf" type="static_transform_publisher" name="base_laser_broadcaster" args="1 0 0 0 0 0 ROBOT_CENTER IBEO 10"/>
+	     
+	      
+
+</launch>
+
+
+
+
+
