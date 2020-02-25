@@ -18,10 +18,10 @@ Branch **master**:
 *** before you run anything, you must define ROS to work with simulation time. This setting is defined by the ROS parameter **"use_sim_time"**, which must be declared before any ROS node is launched.
 Since the first thing to be launched is the "rosbridge_websocket" launch file (/opt/ros/kinetic/share/rosbridge_server/launch), this is where we'll set the parameter.
 
-insert the following line <param name="/use_sim_time" value="true"/> right before the first group (starts with line: group if="$(arg ssl)"
+insert the following line &lt; param name="/use_sim_time" value="true"/ &gt; right before the first group (starts with line: group if="$(arg ssl)"
  
 save the file.
-Since this file is protected for admin use only, you may need to launch it using the sudo gedit command.
+Since this file is protected for admin use only, you may need to launch it using the **sudo gedit** command.
 # Run robot
 
 ## First: run rosbridge:
