@@ -1,9 +1,12 @@
+# Beware
+Robil3 doesn't navigate on melodic Ubuntu 18.04. Needs debugging.
+
 # What?
 This project is called ROBIL3 and its goal is todevelop cooperation between robots.
 It comes from https://github.com/iosp/robil2 branch robil3.
 The robot is a bobcat running with a simulative world in Unity.
 The simulation is in:
- https://github.com/robotil/RobilSimulation/tree/2019.2.17
+ https://github.com/robotil/RobilSimulation
  
 # Install:
 Branch **master**: 

@@ -56,8 +56,8 @@
 	
 	
 	
-	<!-- == LOCALIZATION == -->
-        <!--<node name="loc_node" type="loc_node" pkg="loc" output="screen" respawn="true"/> -->
+	<!-- == LOCALIZATION == --><!---->
+        <node name="loc_node" type="loc_node" pkg="loc" output="screen" respawn="true"/> 
 
 	
 	
